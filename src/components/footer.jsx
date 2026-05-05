@@ -1,4 +1,4 @@
-function footer () {
+function Footer () {
     return(
         <div>
             <p>escapate de la rutina y vive una experiencia inolvidable</p>
@@ -6,4 +6,4 @@ function footer () {
         </div>
     )
 }
-export default footer;
+export default Footer;

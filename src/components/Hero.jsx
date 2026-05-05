@@ -1,4 +1,4 @@
-function laFinca() {
+function Hero() {
     return (
         <div>
             <div>
@@ -37,4 +37,4 @@ function laFinca() {
         </div>
     )
 }
-export default laFinca;
+export default Hero;

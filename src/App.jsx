@@ -1,16 +1,18 @@
 import './App.css';
-import '../src/components/navbar';
-import '../src/components/laFinca';
-import '../src/components/footer';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Footer from './components/Footer';
+import Caracteristicas from './components/Caracteristicas';
 
 function App() {
 
 
   return (
     <div>
-      <navbar/>
-      <laFinca/>
-      <footer/>
+      <Navbar/>
+      <Hero/>
+      <Caracteristicas/>
+      <Footer/>
     </div>
       
   )
