@@ -1,28 +1,29 @@
+import "./css/Navbar.css";
 function Navbar() {
     return (
-        <div>
-            <div>
+        <nav className="navbar">
 
+            <div className="navbar-logo">
                 <h1>Guayabetal</h1>
-                <p>Meta</p>
+                <p>META</p>
             </div>
 
-            <div>
-
+            <div className="navbar-menu">
                 <ul>
-                    <li>Inicio</li>
+                    <li className="active">Inicio</li>
                     <li>La Finca</li>
-                    <li>Galeria</li>
-                    <li>Ubicacion</li>
+                    <li>Galería</li>
+                    <li>Ubicación</li>
                     <li>Contacto</li>
                 </ul>
             </div>
 
-            <div>
+            <div className="navbar-btn">
                 <button>Reservar ahora</button>
             </div>
-        </div>
 
-    )
+        </nav>
+    );
 }
+
 export default Navbar;

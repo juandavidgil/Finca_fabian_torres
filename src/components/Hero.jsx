@@ -1,40 +1,51 @@
+import "./css/Hero.css";
+
 function Hero() {
     return (
-        <div>
-            <div>
-                <h2>GUAYABETAL</h2>
-                <h2>META</h2>
-                <p>Naturaleza, descanso y momentos inolvidables te esperan</p>
-                <p>
+        <section className="hero">
+
+            <div className="hero-content">
+
+                <div className="hero-title">
+                    <h2>GUAYABETAL</h2>
+                    <h2>META</h2>
+                </div>
+
+                <p className="hero-subtitle">
+                    Naturaleza, descanso y momentos inolvidables te esperan
+                </p>
+
+                <p className="hero-description">
                     Descubre un lugar donde el tiempo se detiene,
-                    el aire es puro y cada rincon invita al descanso.
+                    el aire es puro y cada rincón invita al descanso.
                     Nuestra finca es el espacio perfecto para
                     desconectarse del ruido de la ciudad,
                     compartir momentos inolvidables y recargar
-                    energias rodeados de naturaleza
+                    energías rodeados de naturaleza.
                 </p>
 
-                <div>
-                    <button>
-                        Reserva ahora
-                    </button>
-                    <button>
-                        Escribenos
-                    </button>
-
+                <div className="hero-buttons">
+                    <button>Reservar ahora</button>
+                    <button>Escríbenos</button>
                 </div>
 
-                <div>
-                    <p>Entorno natural</p>
-                    <p>Privacidad total</p>
-                    <p>Descanso garantizado</p>
-
+                <div className="hero-features">
+                    <p>🌿 Entorno natural</p>
+                    <p>🛡️ Privacidad total</p>
+                    <p>☕ Descanso garantizado</p>
                 </div>
+
             </div>
-            <div>
-                <img src="https://fincasejecafetero.com/alquilar/finca-28/" alt="foto finca" />
+
+            <div className="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
+                    alt="foto finca"
+                />
             </div>
-        </div>
-    )
+
+        </section>
+    );
 }
+
 export default Hero;

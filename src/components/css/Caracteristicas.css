@@ -1,0 +1,117 @@
+/* Caracteristicas.css */
+
+.caracteristicas {
+    width: 100%;
+    padding: 40px 60px;
+    background: #f8f6f2;
+    display: flex;
+    gap: 40px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* LEFT SIDE */
+.caracteristicas-info {
+    flex: 1.2;
+    background: #f4f0e8;
+    border-radius: 30px;
+    padding: 45px;
+}
+
+.caracteristicas-info h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    color: #2b2b2b;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.caracteristicas-info h2::after {
+    content: "";
+    width: 120px;
+    height: 3px;
+    background: #b89552;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    border-radius: 10px;
+}
+
+/* GRID */
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 40px;
+}
+
+/* CARD */
+.caracteristica-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.caracteristica-card img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.caracteristica-texto h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+.caracteristica-texto p {
+    margin-top: 6px;
+    font-size: 17px;
+    color: #666;
+    line-height: 28px;
+}
+
+/* RIGHT SIDE */
+.caracteristicas-banner {
+    flex: 1;
+    position: relative;
+    min-height: 700px;
+    border-radius: 35px;
+    overflow: hidden;
+    background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+
+/* DARK CARD */
+.banner-card {
+    width: 380px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 28px;
+    padding: 35px;
+    color: white;
+}
+
+.banner-card h3 {
+    font-size: 50px;
+    line-height: 58px;
+    margin-bottom: 25px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+}
+
+.banner-card img {
+    width: 45px;
+    margin-bottom: 20px;
+}
+
+.banner-card p {
+    font-size: 20px;
+    line-height: 34px;
+    color: rgba(255,255,255,0.92);
+}

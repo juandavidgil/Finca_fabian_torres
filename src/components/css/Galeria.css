@@ -1,0 +1,62 @@
+/* GaleriaMapa.css */
+
+.galeria-mapa {
+    width: 100%;
+    padding: 20px 60px 60px;
+    background: #f8f6f2;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.galeria {
+    margin-bottom: 50px;
+}
+
+.galeria h2 {
+    font-size: 52px;
+    margin-bottom: 30px;
+    color: #2a2a2a;
+    font-family: "Cormorant Garamond", serif;
+    position: relative;
+}
+
+.galeria h2::after {
+    content: "";
+    width: 110px;
+    height: 3px;
+    background: #b89552;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 320px 320px;
+    gap: 22px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.02);
+}
+
+.img-principal {
+    grid-row: span 2;
+}
+
+
