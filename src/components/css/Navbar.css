@@ -1,86 +1,299 @@
-/* Navbar.css */
+/* =========================
+   PREMIUM FLOATING NAVBAR
+========================= */
+.navbar-logo,
+.navbar-menu li {
 
+    cursor: pointer;
+}
 .navbar {
+    position: absolute;
+
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
     width: 100%;
-    padding: 20px 60px;
+
+    z-index: 999;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f8f6f2;
-    font-family: "Poppins", sans-serif;
+    flex-wrap: wrap;
+
+    gap: clamp(18px, 2vw, 40px);
+
+    padding:
+        clamp(14px, 1.5vw, 20px)
+        clamp(20px, 3vw, 40px);
+
+   
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.14),
+            rgba(255,255,255,0.05)
+        );
+
+    backdrop-filter: blur(22px);
+
+    -webkit-backdrop-filter: blur(22px);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0px 10px 40px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
     box-sizing: border-box;
+
+    transition:
+        background 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    
+
+    }
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    flex-shrink: 0;
 }
 
-/* LOGO */
 .navbar-logo h1 {
     margin: 0;
-    font-size: 42px;
-    line-height: 38px;
-    color: #1f4d2d;
+
+    font-size: clamp(28px, 4vw, 42px);
+
+    line-height: 0.88;
+
+    color: white;
+
     font-family: "Cormorant Garamond", serif;
+
     font-weight: 600;
+
+    letter-spacing: -1px;
 }
 
 .navbar-logo p {
     margin: 0;
-    font-size: 18px;
-    letter-spacing: 3px;
-    color: #7d8d63;
+
+    font-size: clamp(11px, 1vw, 14px);
+
+    letter-spacing: clamp(1px, 0.3vw, 4px);
+
+    color: rgba(255,255,255,0.72);
+
     font-weight: 500;
+
+    text-transform: uppercase;
 }
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
+
+.navbar-menu {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+
+    min-width: 260px;
+}
+
 .navbar-menu ul {
     display: flex;
-    gap: 45px;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: clamp(16px, 2vw, 40px);
+
     list-style: none;
+
     margin: 0;
     padding: 0;
 }
 
 .navbar-menu li {
-    font-size: 17px;
-    color: #2b2b2b;
-    cursor: pointer;
     position: relative;
-    transition: 0.3s ease;
+
+    font-size: clamp(13px, 1vw, 16px);
+
+    color: rgba(255,255,255,0.82);
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    white-space: nowrap;
 }
 
 .navbar-menu li:hover {
-    color: #1f4d2d;
+    color: white;
+
+    transform: translateY(-1px);
 }
 
+/* ACTIVE */
+
 .navbar-menu li.active {
-    color: #1f4d2d;
-    font-weight: 600;
+    color: white;
 }
 
 .navbar-menu li.active::after {
     content: "";
+
     position: absolute;
-    left: 0;
+
+    left: 50%;
     bottom: -10px;
-    width: 100%;
+
+    transform: translateX(-50%);
+
+    width: 22px;
     height: 3px;
-    border-radius: 10px;
-    background: #1f4d2d;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            to right,
+            #d49a2d,
+            #f3d59a
+        );
+
+    box-shadow:
+        0px 0px 12px rgba(212,154,45,0.55);
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
+
+.navbar-btn {
+    display: flex;
+
+    justify-content: flex-end;
+
+    flex-shrink: 0;
+}
+
 .navbar-btn button {
-    background: #2f5f2f;
-    color: white;
+    position: relative;
+
+    overflow: hidden;
+
     border: none;
-    padding: 15px 28px;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 500;
+
+    padding:
+        clamp(12px, 1vw, 15px)
+        clamp(20px, 2vw, 30px);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d49a2d,
+            #bb861f
+        );
+
+    color: white;
+
+    font-size: clamp(13px, 1vw, 15px);
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
     cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0px 10px 24px rgba(212,154,45,0.28);
+}
+
+.navbar-btn button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+    transition: 0.6s ease;
+}
+
+.navbar-btn button:hover::before {
+    left: 120%;
 }
 
 .navbar-btn button:hover {
-    background: #244b24;
     transform: translateY(-2px);
+
+    box-shadow:
+        0px 14px 30px rgba(212,154,45,0.35);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .navbar-menu {
+        order: 3;
+
+        width: 100%;
+    }
+
+    .navbar-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .navbar-menu ul {
+        gap: 18px;
+    }
 }

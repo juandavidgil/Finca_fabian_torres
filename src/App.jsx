@@ -1,4 +1,5 @@
 import './App.css';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Galeria from './components/Galeria';
@@ -8,18 +9,34 @@ import Footer from './components/Footer';
 
 function App() {
 
-
   return (
-    <div>
-      <Navbar/>
-      <Hero/>
-      <Caracteristicas/>
-      <Galeria/>
-      <Ubicacion/>
-      <Footer/>
+
+    <div className="app">
+
+      <Navbar />
+
+      <section id="inicio">
+        <Hero />
+      </section>
+
+      <section id="caracteristicas">
+        <Caracteristicas />
+      </section>
+
+      <section id="galeria">
+        <Galeria />
+      </section>
+
+      <section id="ubicacion">
+        <Ubicacion />
+      </section>
+
+      <section id="contacto">
+        <Footer />
+      </section>
+
     </div>
-      
-  )
+  );
 }
 
-export default App
+export default App;

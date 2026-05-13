@@ -1,14 +1,107 @@
 import "./css/Hero.css";
 
-function Hero() {
-    return (
-        <section className="hero">
+import {
+    motion,
+    useScroll,
+    useTransform
+} from "motion/react";
+import Paisaje from "../assets/Paisaje.jpeg"
+import { useRef } from "react";
 
-            <div className="hero-content">
+function Hero() {
+
+    const container = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: container,
+        offset: ["start start", "end start"]
+    });
+
+    /* =========================
+       IMAGE ANIMATION
+    ========================= */
+
+    const scale = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [1, 1.35]
+    );
+
+    const opacity = useTransform(
+        scrollYProgress,
+        [0, 0.8],
+        [1, 0.2]
+    );
+
+    const y = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, 180]
+    );
+
+    /* =========================
+       TEXT ANIMATION
+    ========================= */
+
+    const textY = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, 120]
+    );
+
+    const textOpacity = useTransform(
+        scrollYProgress,
+        [0, 0.7],
+        [1, 0]
+    );
+
+    return (
+
+        <section
+            ref={container}
+            className="hero"
+        >
+
+            {/* =========================
+                BACKGROUND IMAGE
+            ========================= */}
+
+            <motion.div
+                className="hero-image-container"
+                style={{
+                    scale,
+                    y,
+                    opacity
+                }}
+            >
+
+                <img
+                    src={Paisaje}
+                    alt="foto finca"
+                />
+
+                <div className="hero-overlay" />
+
+            </motion.div>
+
+            {/* =========================
+                CONTENT
+            ========================= */}
+
+            <motion.div
+                className="hero-content"
+                style={{
+                    y: textY,
+                    opacity: textOpacity
+                }}
+            >
 
                 <div className="hero-title">
+
                     <h2>GUAYABETAL</h2>
+
                     <h2>META</h2>
+
                 </div>
 
                 <p className="hero-subtitle">
@@ -24,25 +117,19 @@ function Hero() {
                     energías rodeados de naturaleza.
                 </p>
 
-                <div className="hero-buttons">
-                    <button>Reservar ahora</button>
-                    <button>Escríbenos</button>
-                </div>
+
 
                 <div className="hero-features">
+
                     <p>🌿 Entorno natural</p>
+
                     <p>🛡️ Privacidad total</p>
+
                     <p>☕ Descanso garantizado</p>
+
                 </div>
 
-            </div>
-
-            <div className="hero-image">
-                <img
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
-                    alt="foto finca"
-                />
-            </div>
+            </motion.div>
 
         </section>
     );
