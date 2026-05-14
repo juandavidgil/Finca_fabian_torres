@@ -262,3 +262,37 @@ body::before {
             clamp(40px, 6vw, 70px);
     }
 }
+
+
+.layout-home {
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: flex-start;
+}
+
+/* GALERIA */
+
+.layout-home .galeria-mapa {
+
+    flex: 1.5;
+}
+
+/* CARACTERISTICAS */
+
+.layout-home .caracteristicas {
+
+    flex: 0.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+    .layout-home {
+
+        flex-direction: column;
+    }
+}

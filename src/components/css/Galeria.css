@@ -1,5 +1,5 @@
 /* =========================
-   GALERIA
+   GALERIA PREMIUM
 ========================= */
 
 * {
@@ -94,7 +94,7 @@
 }
 
 /* =========================
-   GRID
+   GRID PRINCIPAL
 ========================= */
 
 .galeria-grid {
@@ -102,19 +102,144 @@
     display: grid;
 
     grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(min(320px, 100%), 1fr)
-        );
+        1.5fr 1.5fr 1fr;
 
     gap:
-        clamp(18px, 2vw, 30px);
+        clamp(18px, 2vw, 28px);
 
-    align-items: stretch;
+    align-items: start;
 }
 
 /* =========================
-   CARD
+   TARJETA DERECHA
+========================= */
+
+.caracteristicas-side {
+
+    grid-column: 3;
+
+    grid-row:
+        1 / span 20;
+
+    height: 100%;
+}
+
+/* =========================
+   BANNER
+========================= */
+
+.caracteristicas-banner {
+
+    position: sticky;
+
+    top: 30px;
+
+    width: 100%;
+
+    height: calc(100vh - 60px);
+
+    border-radius:
+        clamp(24px, 3vw, 35px);
+
+    overflow: hidden;
+
+    background-image:
+        url("../../assets/paisaje2.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        clamp(20px, 4vw, 40px);
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   DARK CARD
+========================= */
+
+.banner-card {
+
+    width: min(100%, 420px);
+
+    background:
+        rgba(0,0,0,0.45);
+
+    backdrop-filter: blur(16px);
+
+    border-radius:
+        clamp(18px, 3vw, 28px);
+
+    padding:
+        clamp(22px, 4vw, 35px);
+
+    color: white;
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.banner-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0px 30px 60px rgba(0,0,0,0.18);
+}
+
+/* ICON */
+
+.banner-card img {
+
+    width:
+        clamp(34px, 4vw, 45px);
+
+    margin-bottom:
+        clamp(14px, 2vw, 20px);
+}
+
+/* TITLE */
+
+.banner-card h3 {
+
+    margin-bottom:
+        clamp(18px, 3vw, 25px);
+
+    font-size:
+        clamp(30px, 5vw, 50px);
+
+    line-height: 1.1;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-weight: 600;
+}
+
+/* TEXT */
+
+.banner-card p {
+
+    font-size:
+        clamp(15px, 1.8vw, 20px);
+
+    line-height: 1.8;
+
+    color:
+        rgba(255,255,255,0.92);
+}
+
+/* =========================
+   CARDS
 ========================= */
 
 .card {
@@ -123,11 +248,10 @@
 
     width: 100%;
 
-    min-height:
-        clamp(280px, 35vw, 420px);
+    height: 240px;
 
     border-radius:
-        clamp(20px, 3vw, 34px);
+        clamp(20px, 3vw, 30px);
 
     overflow: hidden;
 
@@ -141,8 +265,6 @@
 
     box-shadow:
         0px 12px 40px rgba(0,0,0,0.08);
-
-    will-change: transform;
 }
 
 .card:hover {
@@ -151,13 +273,17 @@
         translateY(-8px);
 
     box-shadow:
-        0px 30px 70px rgba(0,0,0,0.18);
+        0px 24px 60px rgba(0,0,0,0.18);
 }
+
+/* CARD GRANDE */
 
 .card-large {
 
-    min-height:
-        clamp(360px, 48vw, 560px);
+    height: 380px;
+
+    grid-column:
+        span 2;
 }
 
 /* =========================
@@ -219,10 +345,10 @@
     position: absolute;
 
     bottom:
-        clamp(20px, 3vw, 34px);
+        clamp(18px, 3vw, 28px);
 
     left:
-        clamp(20px, 3vw, 34px);
+        clamp(18px, 3vw, 28px);
 
     z-index: 2;
 
@@ -234,7 +360,7 @@
 .card-content span {
 
     font-size:
-        clamp(11px, 1vw, 14px);
+        clamp(10px, 1vw, 13px);
 
     opacity: 0.82;
 
@@ -243,12 +369,12 @@
 
 .card-content h2 {
 
-    margin-top: 10px;
+    margin-top: 8px;
 
     font-size:
-        clamp(28px, 4vw, 52px);
+        clamp(22px, 3vw, 38px);
 
-    line-height: 0.96;
+    line-height: 1;
 
     font-weight: 600;
 
@@ -322,33 +448,12 @@
         1px solid rgba(255,255,255,0.06);
 }
 
-.modal-card::-webkit-scrollbar {
-
-    width: 6px;
-}
-
-.modal-card::-webkit-scrollbar-thumb {
-
-    background:
-        rgba(255,255,255,0.18);
-
-    border-radius: 20px;
-}
-
-/* =========================
-   MODAL CONTENT
-========================= */
-
 .modal-content {
 
     display: flex;
 
     flex-direction: column;
 }
-
-/* =========================
-   MODAL IMAGE
-========================= */
 
 .modal-image {
 
@@ -360,15 +465,7 @@
     object-fit: cover;
 
     display: block;
-
-    filter:
-        brightness(0.95)
-        saturate(1.05);
 }
-
-/* =========================
-   MODAL INFO
-========================= */
 
 .modal-info {
 
@@ -405,10 +502,6 @@
     font-weight: 600;
 }
 
-/* =========================
-   MODAL BODY
-========================= */
-
 .modal-body {
 
     margin-top: 24px;
@@ -426,4 +519,39 @@
     flex-direction: column;
 
     gap: 18px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .galeria-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .caracteristicas-side {
+
+        grid-column: auto;
+
+        grid-row: auto;
+    }
+
+    .caracteristicas-banner {
+
+        height: 600px;
+
+        position: relative;
+
+        top: 0;
+    }
+
+    .card-large {
+
+        grid-column:
+            span 1;
+    }
 }

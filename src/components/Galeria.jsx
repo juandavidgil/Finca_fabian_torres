@@ -13,7 +13,12 @@ import cascada from "../assets/cascada.jpeg";
 import rio from "../assets/rio.png";
 import atardecer from "../assets/atardecer.png";
 import zonasVerdes from "../assets/zonasverdes.png";
-import momentos from "../assets/momentos.jpeg"
+import momentos from "../assets/momentos.jpeg";
+import paisajes2 from "../assets/paisaje2.jpeg";
+import cama from "../assets/cama.webp";
+import baño from "../assets/bano.jpg";
+import cocina from "../assets/cocina.webp";
+import parqueadero from "../assets/parqueadero.jpg";
 
 function Galeria() {
 
@@ -27,7 +32,7 @@ function Galeria() {
             categoria: "Paisajes",
             descripcion:
                 "Disfruta de vistas increíbles rodeadas de naturaleza y tranquilidad.",
-            img: zonasVerdes
+            img: paisajes2
         },
 
         {
@@ -55,6 +60,42 @@ function Galeria() {
             descripcion:
                 "Disfruta de paisajes únicos y momentos inolvidables.",
             img: momentos
+        },
+
+        {
+            id: 5,
+            titulo: "Habitaciones",
+            categoria: "Estadia",
+            descripcion:
+                "Disfruta de 2 habitaciones equipadas para tu descanso.",
+            img: cama
+        },
+
+        {
+            id: 6,
+            titulo: "Baño",
+            categoria: "Estadia",
+            descripcion:
+                "Disfruta de 2 habitaciones equipadas para tu descanso.",
+            img: baño
+        },
+
+        {
+            id: 7,
+            titulo: "Cocina",
+            categoria: "Estadia",
+            descripcion:
+                "Disfruta de 2 habitaciones equipadas para tu descanso.",
+            img: cocina
+        },
+
+        {
+            id: 8,
+            titulo: "Parqueadero",
+            categoria: "Estadia",
+            descripcion:
+                "Disfruta de 2 habitaciones equipadas para tu descanso.",
+            img: parqueadero
         }
     ];
 
@@ -153,6 +194,71 @@ function Galeria() {
                         amount: 0.1
                     }}
                 >
+
+                    {/* =========================
+                       CARD DERECHA
+                    ========================= */}
+
+                    <motion.div
+                        className="caracteristicas-side"
+
+                        initial={{
+                            opacity: 0,
+                            x: 80
+                        }}
+
+                        whileInView={{
+                            opacity: 1,
+                            x: 0
+                        }}
+
+                        viewport={{
+                            once: true,
+                            amount: 0.2
+                        }}
+
+                        transition={{
+                            duration: 1,
+                            ease: [0.22, 1, 0.36, 1]
+                        }}
+                    >
+
+                        <div className="caracteristicas-banner">
+
+                            <motion.div
+                                className="banner-card"
+
+                                whileHover={{
+                                    y: -10,
+                                    scale: 1.02
+                                }}
+
+                                transition={{
+                                    duration: 0.4
+                                }}
+                            >
+
+                                <h3>
+                                    Conéctate con lo que realmente importa
+                                </h3>
+
+                  
+
+                                <p>
+                                    Disfruta de la tranquilidad del campo,
+                                    el sonido del río y la belleza de los
+                                    paisajes únicos.
+                                </p>
+
+                            </motion.div>
+
+                        </div>
+
+                    </motion.div>
+
+                    {/* =========================
+                       CARDS
+                    ========================= */}
 
                     {imagenes.map((itemGaleria) => (
 
